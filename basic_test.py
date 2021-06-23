@@ -1,4 +1,4 @@
-from sith.main import app as flask_app
+from main import app as flask_app
 
 
 def test_home_page():
