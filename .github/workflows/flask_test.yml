@@ -15,8 +15,11 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-    - uses: nelonoel/branch-name@v1
-    - run: echo ${BRANCH_NAME}
+    - name: Current Branch Name
+      uses: nelonoel/branch-name@v1
+      run: echo ${BRANCH_NAME}
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     
     - uses: actions/checkout@v2
     - name: Set up Python 3.8
