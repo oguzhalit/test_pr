@@ -22,8 +22,6 @@ jobs:
 
     - name: Current Branch Name
       run: echo ${BRANCH_NAME}
-      env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     
     - uses: actions/checkout@v2
     - name: Set up Python 3.8
