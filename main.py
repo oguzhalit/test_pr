@@ -16,15 +16,11 @@ def contact():
 @app.route("/db")
 def database():
 
-    client = MongoClient(
-               os.environ["DB_HOST"],
-               username=os.environ["DB_USERNAME"],
-               password=os.environ["DB_PASSWORD"],
-           )
+    client = MongoClient(os.environ['DB_HOST'])
     db = client.test
 
-    names = ['Ahmet']
-    company = ['Logo']
+    names = ['Miyav']
+    company = ['Kedi']
 
     test = {
       'name': names[0],
