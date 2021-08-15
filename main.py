@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from pymongo import MongoClient
+import os
 app = Flask(__name__)
 
 @app.route("/")
@@ -14,15 +15,16 @@ def contact():
     return render_template('contact.html')
 @app.route("/db")
 def database():
+
     client = MongoClient(
-        os.environ["DB_HOST"],
-        username=os.environ["DB_USERNAME"],
-        password=os.environ["DB_PASSWORD"],
-    )
+               os.environ["DB_HOST"],
+               username=os.environ["DB_USERNAME"],
+               password=os.environ["DB_PASSWORD"],
+           )
     db = client.test
 
-    names = ['Oguz']
-    company = ['Yok']
+    names = ['Ahmet']
+    company = ['Logo']
 
     test = {
       'name': names[0],
