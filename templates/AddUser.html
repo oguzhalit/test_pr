@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+   <div class="contact">
+     <h1>User Ekle</h1>
+     <p>Bu site bir proje demosu olarak kullanılıyor</p>
+     <form action="{{ url_for('database') }}" method="post">
+	<p>
+	<label for="fname">isim: </label><br>
+	<input type="text" id="fname" name="fname"><br>
+	</p>
+	<p>
+	<label for="lname">soyad: </label><br>
+	<input type="text" id="lname" name="lname"><br>
+	</p>
+        <input type="submit" id="kayit" value="Ekle">
+     </form>
+   </div>
+ {% endblock %}
