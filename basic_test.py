@@ -1,5 +1,7 @@
 from main import app as flask_app
-
+import os
+import json, jsonify
+client = MongoClient(os.environ['DB_HOST'])
 
 def test_home_page():
     """
