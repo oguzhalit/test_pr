@@ -16,13 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: nelonoel/branch-name@v1
-      env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-
-    - name: Current Branch Name
-      run: echo ${BRANCH_NAME}
-    
     - uses: actions/checkout@v2
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
@@ -35,3 +28,5 @@ jobs:
     - name: Test with unittest
       run: |
         pytest
+      env:
+        DB_HOST: ${{ secrets.DB_HOST }}
