@@ -15,12 +15,17 @@ def home():
 def about():
     return render_template('about.html')
 
+@app.route("/users")
+def userList():
+    for user in db.users.find_all():
+        return user
+
 @app.route("/contact")
 def contact():
     return render_template('contact.html')
 @app.route("/user")
 def userAdd():
-    return render_template('AddUser.html')
+    return render_template('adduser.html')
 @app.route("/db", methods=['GET','POST'])
 def database():
 #    client = MongoClient(os.environ['DB_HOST'])
