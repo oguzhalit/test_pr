@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 import os
 import json, jsonify
@@ -33,9 +33,10 @@ def database():
           'soyad': soyad
         }
         result=db.users.insert_one(test)
-    return f'''
-    <h1>Kullanıcı Eklendi.{isim} --- {soyad}</h1>
-    '''
+    # return f'''
+    # <h1>Kullanıcı Eklendi.{isim} --- {soyad}</h1>
+    # '''
+        return redirect(url_for('home'))
 
 @app.route("/ulist")
 def list():
