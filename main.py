@@ -17,7 +17,8 @@ def about():
 
 @app.route("/users")
 def userList():
-    for user in db.users.find_all():
+    users = db.command('usersInfo')
+    for user in users['users']:
         return user
 
 @app.route("/contact")
